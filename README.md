@@ -7,7 +7,7 @@ How To Use
   -the first argument will be the website and the second will be the password.
 Example: `./passwordmanager google mypass123`
 
-2). see the password
+2). see the password\n
   -launche the app with cmd or powershell.
   -the first argument will be the website.
 Example: `./passwordmanager google`
