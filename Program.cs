@@ -1,4 +1,4 @@
-﻿namespace passwordmanager
+namespace passwordmanager
 {
     internal class Program
     {
@@ -6,7 +6,7 @@
         {
             if (args[0] == "setpass")
             {
-                File.WriteAllText($"passfor{args[1]}", args[2]);
+                File.WriteAllText($"passfor{args[1]}.passarg", args[2]);
                 Console.WriteLine($"Password for {args[1]} has been created successfully!");
                 Console.ReadLine();
             }
@@ -23,8 +23,14 @@
                 {
                     Console.WriteLine($"Password for {args[1]} not found");
                 }
-                
-                
+            }else if (args[0] == "seeall")
+            {
+                string directoryPath = @"C:\MyDirectory\*.passarg";
+                string[] fileEntries = Directory.GetFiles(directoryPath);
+                foreach (string obj in fileEntries)
+                {
+                    Console.WriteLine($"Website: {obj}\nPassword: {File.ReadAllText(obj)}\n---------------");
+                }
             }
         }
     }
